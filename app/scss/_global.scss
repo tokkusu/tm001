@@ -1,0 +1,70 @@
+html {
+   box-sizing: border-box;
+   scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+ul,
+ol,
+li {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   margin: 0;
+   font-size: inherit;
+}
+
+body {
+   min-width: $minWidth;
+   overflow-x: hidden;
+   position: relative;
+   color: #fff;
+   @include fontStyle("Ubuntu", "300", 15, 1.5);
+}
+
+.container {
+   max-width: $maxWidthContainer + px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+.page-section {   
+   background-image: linear-gradient(107.54deg, rgba(23, 26, 28, 0.108) 0%, rgba(94, 94, 87, 0.3) 100%), url("../images/page-bg.jpg");
+   background-repeat: no-repeat;
+   background-position: top center;
+   background-size: cover;
+   position: relative;
+   padding: 74px 0 50px; 
+   min-height: 100vh;
+}
+
+.webp .page-section {
+   background-image: 
+   linear-gradient(107.54deg, rgba(23, 26, 28, 0.108) 0%, rgba(94, 94, 87, 0.3) 100%), url('../images/page-bg.webp');
+}
+
+.title {
+   @include fontStyle("SFProDisplay", 400, 44, 1.2);
+   padding-left: 25px;
+   margin: 0 0 55px;
+   padding-top: 150px;
+}
+

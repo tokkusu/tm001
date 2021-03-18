@@ -1,0 +1,36 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+   @font-face {
+      font-family: $font_name;
+      font-display: swap;
+      src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+      font-weight: #{$weight};
+      font-style: #{$style};
+   }
+}
+
+@mixin fontStyle($family, $weight, $size, $lineHeight) {
+   font-family: $family, sans-serif;
+   font-weight: #{$weight};
+   font-size: #{$size}px;
+   line-height: #{$lineHeight};
+}
+
+// @function calcResponsiveFont($fsMin, $fsMax, $widthMin, $widthMax){
+//    $k: ($fsMax - $fsMin)/($widthMax - $widthMin);
+//    $b: $fsMin - $k * $widthMin;
+
+//    @return calc(#{$k} * 100vw + #{$b});
+//  }
+ 
+// @mixin responsiveFont($fsMin, $fsMax, $widthMin, $widthMax) {
+
+//    font-size: $fsMin;
+
+//   @media (min-width: $widthMin) {
+//     font-size: calcResponsiveFont($fsMin, $fsMax, $widthMin, $widthMax);  
+//   }
+
+//   @media (min-width: $widthMax) {
+//     font-size: $fsMax;
+//   }
+// }

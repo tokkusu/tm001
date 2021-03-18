@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<title>SVG stack preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+		
+<!--
+	
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-arrow-down-dims { width: 17px; height: 9px; }
+	.svg-arrow-left-dims { width: 10px; height: 18px; }
+	.svg-arrow-right-dims { width: 10px; height: 18px; }
+	.svg-facebook-dims { width: 40px; height: 40px; }
+	.svg-instagram-dims { width: 40px; height: 40px; }
+	.svg-line-1-dims { width: 247px; height: 47px; }
+	.svg-line-2-dims { width: 465px; height: 64px; }
+	.svg-line-3-dims { width: 256px; height: 41px; }
+	.svg-pointer-1-dims { width: 229px; height: 115px; }
+	.svg-pointer-2-dims { width: 258px; height: 104px; }
+	.svg-pointer-3-dims { width: 346px; height: 82px; }
+	.svg-pointer-4-dims { width: 124px; height: 90px; }
+	.svg-questions-arrow-dims { width: 20px; height: 13px; }
+	.svg-youtube-dims { width: 40px; height: 40px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+		<header>
+			<h1>SVG stack preview</h1>
+			<p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-fragment" target="_blank">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+				<li>Support for SVG fragment identifiers hasn&apos;t always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank">fixsvgstack.jquery.js</a>.</li>
+			</ul>
+		</header>
+		<section>
+			
+<!--
+	
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.  
+
+-->
+
+			<ul>
+				
+				<li title="arrow-down">
+					<div class="icon-box">
+						
+						<!-- arrow-down -->
+						<img src="svgicons.svg#arrow-down" class="svg-arrow-down-dims" alt="arrow-down"/>
+						
+					</div>
+					<h2>arrow-down</h2>
+				</li>
+				<li title="arrow-left">
+					<div class="icon-box">
+						
+						<!-- arrow-left -->
+						<img src="svgicons.svg#arrow-left" class="svg-arrow-left-dims" alt="arrow-left"/>
+						
+					</div>
+					<h2>arrow-left</h2>
+				</li>
+				<li title="arrow-right">
+					<div class="icon-box">
+						
+						<!-- arrow-right -->
+						<img src="svgicons.svg#arrow-right" class="svg-arrow-right-dims" alt="arrow-right"/>
+						
+					</div>
+					<h2>arrow-right</h2>
+				</li>
+				<li title="facebook">
+					<div class="icon-box">
+						
+						<!-- facebook -->
+						<img src="svgicons.svg#facebook" class="svg-facebook-dims" alt="facebook"/>
+						
+					</div>
+					<h2>facebook</h2>
+				</li>
+				<li title="instagram">
+					<div class="icon-box">
+						
+						<!-- instagram -->
+						<img src="svgicons.svg#instagram" class="svg-instagram-dims" alt="instagram"/>
+						
+					</div>
+					<h2>instagram</h2>
+				</li>
+				<li title="line-1">
+					<div class="icon-box">
+						
+						<!-- line-1 -->
+						<img src="svgicons.svg#line-1" class="svg-line-1-dims" alt="line-1"/>
+						
+					</div>
+					<h2>line-1</h2>
+				</li>
+				<li title="line-2">
+					<div class="icon-box">
+						
+						<!-- line-2 -->
+						<img src="svgicons.svg#line-2" class="svg-line-2-dims" alt="line-2"/>
+						
+					</div>
+					<h2>line-2</h2>
+				</li>
+				<li title="line-3">
+					<div class="icon-box">
+						
+						<!-- line-3 -->
+						<img src="svgicons.svg#line-3" class="svg-line-3-dims" alt="line-3"/>
+						
+					</div>
+					<h2>line-3</h2>
+				</li>
+				<li title="pointer-1">
+					<div class="icon-box">
+						
+						<!-- pointer-1 -->
+						<img src="svgicons.svg#pointer-1" class="svg-pointer-1-dims" alt="pointer-1"/>
+						
+					</div>
+					<h2>pointer-1</h2>
+				</li>
+				<li title="pointer-2">
+					<div class="icon-box">
+						
+						<!-- pointer-2 -->
+						<img src="svgicons.svg#pointer-2" class="svg-pointer-2-dims" alt="pointer-2"/>
+						
+					</div>
+					<h2>pointer-2</h2>
+				</li>
+				<li title="pointer-3">
+					<div class="icon-box">
+						
+						<!-- pointer-3 -->
+						<img src="svgicons.svg#pointer-3" class="svg-pointer-3-dims" alt="pointer-3"/>
+						
+					</div>
+					<h2>pointer-3</h2>
+				</li>
+				<li title="pointer-4">
+					<div class="icon-box">
+						
+						<!-- pointer-4 -->
+						<img src="svgicons.svg#pointer-4" class="svg-pointer-4-dims" alt="pointer-4"/>
+						
+					</div>
+					<h2>pointer-4</h2>
+				</li>
+				<li title="questions-arrow">
+					<div class="icon-box">
+						
+						<!-- questions-arrow -->
+						<img src="svgicons.svg#questions-arrow" class="svg-questions-arrow-dims" alt="questions-arrow"/>
+						
+					</div>
+					<h2>questions-arrow</h2>
+				</li>
+				<li title="youtube">
+					<div class="icon-box">
+						
+						<!-- youtube -->
+						<img src="svgicons.svg#youtube" class="svg-youtube-dims" alt="youtube"/>
+						
+					</div>
+					<h2>youtube</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Thu, 11 Mar 2021 11:58:31 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>
