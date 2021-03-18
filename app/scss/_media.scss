@@ -153,9 +153,9 @@
    }
 
    .specifications__box-2::before {
-      width: 698px;
+      width: 352px;
       height: 70px;      
-      right: -678px;
+      right: -328px;
       bottom: 128px;
    }
    
@@ -182,7 +182,7 @@
    }
    
    .benefits__item {
-      width: 100%;
+      width: 88%;
       margin-bottom: 40px;
       
       &::before,
@@ -224,15 +224,23 @@
    }
 
    .specifications__box-2::before {
-      width: 730px;
+      width: 365px;
       height: 68px;
   }   
 
   .questions__item:nth-child(3)::before {
+      width: 220px;
+      height: 86px;
+      top: -24px;
+      right: -290px;
       background-image: url('../images/questions-bg.220w.png');
   }
 
   .webp .questions__item:nth-child(3)::before {
+      width: 220px;
+      height: 86px;
+      top: -24px;
+      right: -290px;
       background-image: url('../images/questions-bg.220w.webp');
    }
 
@@ -389,7 +397,7 @@
    }
 
    .specifications__box-2::before {
-      width: 742px;
+      width: 371px;
       height: 56px;
       bottom: 130px;
    }
