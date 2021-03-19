@@ -39,8 +39,24 @@
    }
 
    &__phone {
+      position: relative;
       @include fontStyle("Ubuntu", 700, 16, 1.2);
 
+      &::after {
+         content: '';
+         position: absolute;
+         width: 0;
+         height: 1px;
+         left: 0;
+         bottom: -5px;
+         background-color: #fff;
+         transition: width 0.3s ease-out;
+      }
+
+      &:hover::after,
+      &:focus::after {
+         width: 100%;
+      }
    }
 }
 
@@ -52,9 +68,30 @@
       }
    }
 
+   &__list-link {
+      position: relative;
+   
+      &::after {
+         content: '';
+         position: absolute;
+         width: 0;
+         height: 1px;
+         left: 0;
+         bottom: -5px;
+         background-color: #fff;
+         transition: width 0.3s ease-out;
+      }
+
+      &:hover::after,
+      &:focus::after {
+         width: 100%;
+      }
+   }
+
    &__list-phone {
       display: none;
    }
+   
 
    &__btn {
       display: none;
@@ -78,12 +115,19 @@
    &__title {
       @include fontStyle("SFProDisplay", 600, 96, 1.2);
       margin-bottom: 25px;  
+      overflow: hidden;
+      text-overflow: clip;
+      max-height: 116px; 
+      max-width: 500px;
    }   
 
    &__text {
       @include fontStyle("Ubuntu", 300, 17, 1.5);
       margin: 25px 0 35px;
-      max-width: 325px;      
+      max-width: 325px;  
+      max-height: 52px;   
+      overflow: hidden;
+      text-overflow: clip; 
    }
 
    &__social {
@@ -657,6 +701,10 @@
       @include fontStyle("Ubuntu", 300, 13, 1.2);
       text-align: right;
       color: rgba(#fff, 0.64);
+      overflow: hidden;
+      text-overflow: clip;
+      max-height: 16px;
+      max-width: 68px;
    }
 }
 

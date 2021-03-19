@@ -5,7 +5,8 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>DJI Mavic 2 Pro</title>
+   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
    <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -430,11 +431,11 @@
                      Мы обязательно свяжемся с вами в течение двух рабочих дней
                   </p>
                   <div class="contacts__form-line">
-                     <input class="contacts__form-input" placeholder="Ваше имя" type="text">
-                     <input class="contacts__form-input" placeholder="Ваш e-mail" type="email">
+                     <input class="contacts__form-input" placeholder="Ваше имя" type="text" max-length="40" pattern="^[a-zA-Zа-яА-ЯёЁ]+ [a-zA-Zа-яА-ЯёЁ]+$" required>
+                     <input class="contacts__form-input" placeholder="Ваш e-mail" type="email" max-length="40" required>
                   </div>
-                  <textarea class="contacts__form-textarea" placeholder="Что вас интересует?"></textarea>
-                  <button class="contacts__form-btn" type="submit">ОТПРАВИТЬ</button>
+                  <textarea class="contacts__form-textarea" placeholder="Что вас интересует?" maxlength="400" required></textarea>
+                  <button class="contacts__form-btn" type="submit">Отправить</button>
                </form>
             </div>
 
