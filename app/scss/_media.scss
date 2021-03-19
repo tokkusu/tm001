@@ -635,7 +635,7 @@
    }
 }
 
-@media (max-width: 768px) {  
+@media (max-width: $md3) {  
 
    .page-section {   
       background-image: linear-gradient(107.54deg, rgba(23, 26, 28, 0.108) 0%, rgba(94, 94, 87, 0.3) 100%), url("../images/page-bg.768w.jpg");
