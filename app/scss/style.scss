@@ -18,7 +18,7 @@
       align-items: center;
       min-height: 30px;
       text-transform: uppercase;
-      @include fontStyle("Ubuntu", 500, 15, 1.5);
+      @include fontStyle(500, 15, 1.5);
    }
 
    &__button {
@@ -40,7 +40,7 @@
 
    &__phone {
       position: relative;
-      @include fontStyle("Ubuntu", 700, 16, 1.2);
+      @include fontStyle(700, 16);
 
       &::after {
          content: '';
@@ -113,21 +113,16 @@
    }
 
    &__title {
-      @include fontStyle("SFProDisplay", 600, 96, 1.2);
+      font-family: $fontFamily2;
+      @include fontStyle(600, 96);
       margin-bottom: 25px;  
-      overflow: hidden;
-      text-overflow: clip;
-      max-height: 116px; 
       max-width: 500px;
    }   
 
    &__text {
-      @include fontStyle("Ubuntu", 300, 17, 1.5);
+      @include fontStyle(300, 17, 1.5);
       margin: 25px 0 35px;
       max-width: 325px;  
-      max-height: 52px;   
-      overflow: hidden;
-      text-overflow: clip; 
    }
 
    &__social {
@@ -207,10 +202,11 @@
       width: 285px;
       position: absolute;
       text-align: right;
-      @include fontStyle("Ubuntu", 500, 24, 1.2);
+      @include fontStyle(500, 24);
       left: -250px;
       bottom: 15px;
       z-index: 5;
+      text-shadow: 2px 1px 10px #000;
    }
 
    &__slider {
@@ -296,7 +292,7 @@
          bottom: 33px;
          left: -28px;
          color: #fff;
-         @include fontStyle("Ubuntu", 700, 36, 1.2);
+         @include fontStyle(700, 36);
       }
 
       &:nth-child(even) {
@@ -398,10 +394,9 @@
 
    &__info-title {
       width: 137px;
-      @include fontStyle("Ubuntu", 700, 21, 1.2);
+      @include fontStyle(700, 21);
       margin-bottom: 10px;
    }
-
 }
 
 .specifications {
@@ -496,7 +491,7 @@
    }
 
    &__box-title {
-      @include fontStyle("Ubuntu", 700, 21, 1.2);
+      @include fontStyle(700, 21);
    }
 }
 
@@ -527,7 +522,7 @@
    }
 
    &__item-title {
-      @include fontStyle("Ubuntu", 500, 21, 1.2);      
+      @include fontStyle(500, 21);      
       color: rgba(#fff, 0.8);
       padding: 20px 10px 24px 40px;
       position: relative;
@@ -599,7 +594,7 @@
    }
 
    &__info-title {
-      @include fontStyle("Ubuntu", 700, 21, 1.2);
+      @include fontStyle(700, 21);
       margin: 0 0 13px;
    }
 
@@ -613,7 +608,7 @@
    }
 
    &__form-title {
-      @include fontStyle("Ubuntu", 700, 21, 1.2);
+      @include fontStyle(700, 21);
    }
 
    &__form-text {
@@ -631,7 +626,7 @@
       background-color: rgba(0, 0, 0, 0.5);
       border: none;
       padding: 15px;
-      @include fontStyle("Ubuntu", 400, 13, 1.2);
+      @include fontStyle(400, 13);
       color: #fff;
 
       &::placeholder {
@@ -698,12 +693,9 @@
    bottom: 32px;
 
    &__copyright {
-      @include fontStyle("Ubuntu", 300, 13, 1.2);
+      @include fontStyle(13);
       text-align: right;
       color: rgba(#fff, 0.64);
-      overflow: hidden;
-      text-overflow: clip;
-      max-height: 16px;
       max-width: 68px;
    }
 }

@@ -37,7 +37,9 @@ body {
    overflow-x: hidden;
    position: relative;
    color: #fff;
-   @include fontStyle("Ubuntu", "300", 15, 1.5);
+   font-family: $fontFamily1;
+   @include fontStyle(300, 15, 1.5);
+   background-color: #3b3434;
 }
 
 .container {
@@ -62,7 +64,8 @@ body {
 }
 
 .title {
-   @include fontStyle("SFProDisplay", 400, 44, 1.2);
+   @include fontStyle(400, 44);
+   font-family: $fontFamily2;
    padding-left: 25px;
    margin: 0 0 55px;
    padding-top: 150px;   

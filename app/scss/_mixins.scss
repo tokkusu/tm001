@@ -2,19 +2,20 @@
    @font-face {
       font-family: $font_name;
       font-display: swap;
-      src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+      src:  url("../fonts/#{$file_name}.woff2") format("woff2"), url("../fonts/#{$file_name}.woff") format("woff");
       font-weight: #{$weight};
       font-style: #{$style};
    }
 }
 
-@mixin fontStyle($family, $weight, $size, $lineHeight) {
-   font-family: $family, sans-serif;
+@mixin fontStyle($weight: 300, $size: 15, $lineHeight: 1.2) {
    font-weight: #{$weight};
    font-size: #{$size}px;
    line-height: #{$lineHeight};
 }
 
+
+// Отзывчивый шрифт
 // @function calcResponsiveFont($fsMin, $fsMax, $widthMin, $widthMax){
 //    $k: ($fsMax - $fsMin)/($widthMax - $widthMin);
 //    $b: $fsMin - $k * $widthMin;
@@ -34,3 +35,4 @@
 //     font-size: $fsMax;
 //   }
 // }
+

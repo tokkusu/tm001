@@ -5,7 +5,8 @@
    }
   
    .top__title {
-      @include fontStyle("SFProDisplay", 600, 75, 1.2);
+      @include fontStyle(600, 75);
+      font-family: $fontFamily2;
       margin-bottom: 20px;  
       max-height: 91px; 
       max-width: 385px;
@@ -459,7 +460,7 @@
    }
 
    .questions__item-title {
-      @include fontStyle("Ubuntu", 500, 18, 1.2); 
+      @include fontStyle(500, 18); 
       padding-top: 20px;
       padding-bottom: 20px;
    }
@@ -492,32 +493,24 @@
    .products__title {
       padding-top: 60px;
       margin-bottom: 35px;
-      @include fontStyle("SFProDisplay", 400, 35, 1.2);
    }
 
    .products__slider-text {
-      @include fontStyle("Ubuntu", 500, 20, 1.2);
+      @include fontStyle(500, 20);
       top: -90px;
    }
 
-   .benefits__title {
-      @include fontStyle("SFProDisplay", 400, 35, 1.2);
-   }
-
-   .specifications__title {
-      @include fontStyle("SFProDisplay", 400, 35, 1.2);
-   }
-
-   .questions__title {
-      @include fontStyle("SFProDisplay", 400, 35, 1.2);
+   .products__title,
+   .benefits__title,
+   .specifications__title,
+   .questions__title,
+   .contacts__title {
+      @include fontStyle(400, 35);
+      font-family: $fontFamily2;
    }
 
    .questions__items {
       margin-right: 15px;
-   }
-
-   .contacts__title {
-      @include fontStyle("SFProDisplay", 400, 35, 1.2);
    }
 }
 
@@ -668,10 +661,12 @@
       padding-left: 0;
    }
 
-   .products__title {
+   .products__title,
+   .benefits__title, {
       padding-left: 0;
       padding-top: 20px;
-      @include fontStyle("SFProDisplay", 400, 27, 1.2);
+      font-family: $fontFamily2;
+      @include fontStyle(400, 27);
    }
 
    .products__slider-box {
@@ -690,21 +685,18 @@
    .products__slider-img img {
       width: 100%;
       object-fit: cover;
-   }
+   } 
    
-   .benefits__title {
-      padding-left: 0;
-      padding-top: 20px;
-      @include fontStyle("SFProDisplay", 400, 27, 1.2);
-   }
-
    .benefits__items {      
       margin-left: 0;
    }
 
-   .specifications__title {
+   .specifications__title,
+   .questions__title,
+   .contacts__title {
       padding-left: 0;
-      @include fontStyle("SFProDisplay", 400, 27, 1.2);
+      font-family: $fontFamily2;
+      @include fontStyle(400, 27);
    }
 
    .specifications__inner {
@@ -721,8 +713,9 @@
       margin-bottom: 40px;
    }
 
-   .specifications__box-title {
-      @include fontStyle("Ubuntu", 700, 18, 1.2);
+   .specifications__box-title,
+   .contacts__info-title {
+      @include fontStyle(700, 18);
    }
 
    .specifications__item:nth-child(3) > .specifications__box-3 {
@@ -733,22 +726,8 @@
       margin-bottom: 25px;
    }
 
-   .questions__title {
-      padding-left: 0;
-      @include fontStyle("SFProDisplay", 400, 27, 1.2);
-   }
-
    .contacts__inner {
       margin-left: 0;
-   }
-
-   .contacts__title {
-      padding-left: 0;
-      @include fontStyle("SFProDisplay", 400, 27, 1.2);
-   }
-
-   .contacts__info-title {
-      @include fontStyle("Ubuntu", 700, 18, 1.2);
    }
 }
 
@@ -848,7 +827,7 @@
    }
 
    .benefits__info-title {
-      @include fontStyle("Ubuntu", 700, 17, 1.2);
+      @include fontStyle(700, 17);
    }
 
    .benefits__info-text {
@@ -871,6 +850,26 @@
    }   
 }
 
+@media (max-height: 620px) {
+
+   .menu__list {
+      padding: 120px 0 100px 30px;
+   }
+
+   .menu__list-item {
+      margin-bottom: 10px;
+   }
+
+   .menu__list-link,
+   .menu__list-phone {
+      padding: 10px 0;
+   }
+
+   .menu__list-item:last-child {
+      padding: 15px 0;
+   }
+}
+
 @media (max-height: 420px) {
 
    .menu__list-item {
@@ -885,9 +884,4 @@
    .menu__list-item:last-child {
       padding: 15px 0;
    }
-}
-
-@media (max-height: 340px) {
-
-   
 }
