@@ -37,7 +37,7 @@
             </nav>
 
             <div class="header__info">
-               <button class="header__button" type="button">Купить</button>
+               <button class="header__button" type="button" data-modal-button="modal-1">Купить</button>               
                <a href="tel:80505676767" class="header__phone">8 (050) 567 67 67</a>
             </div>
          </div>
@@ -471,6 +471,34 @@
       </div>            
    </footer> 
    
+   <div class="fade-block" data-modal id="modal-1">
+      <div class="modal">
+         <div class="card">
+            <h3 class="card__title">До старта продаж осталось:</h3>
+            <button class="card__button" data-modal-close type="button">x</button>
+            <div class="card__body">
+               <div class="card__item">
+                  <h4 class="card__item-title" id="days">00</h4>
+                  <p class="card__item-text">Дней</p>
+               </div>
+               <div class="card__item">
+                  <h4 class="card__item-title" id="hours">00</h4>
+                  <p class="card__item-text">Часов</p>
+               </div>
+               <div class="card__item">
+                  <h4 class="card__item-title" id="minutes">00</h4>
+                  <p class="card__item-text">Минут</p>
+               </div>
+               <div class="card__item">
+                  <h4 class="card__item-title" id="seconds">00</h4>
+                  <p class="card__item-text">Секунд</p>
+               </div>                           
+               
+            </div>                        
+         </div>
+      </div>
+   </div>
+
    <script src="js/vendors.min.js"></script>
    <script src="js/script.min.js"></script>
 </body>

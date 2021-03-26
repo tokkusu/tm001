@@ -693,12 +693,117 @@
    bottom: 32px;
 
    &__copyright {
-      @include fontStyle(13);
+      @include fontStyle(300, 13);
       text-align: right;
       color: rgba(#fff, 0.64);
       max-width: 68px;
    }
 }
+
+.fade-block {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(12, 14, 14, 0.808);
+   overflow-y: auto;
+   overflow-x: hidden;
+   z-index: 10;
+   visibility: hidden;
+   opacity: 0;
+   transition: all 0.5s ease-in;     
+}
+
+.fade-block.open {
+   visibility: visible;
+   opacity: 1;
+}
+
+.modal {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 12;  
+   transition: all 0.5s ease-in;
+}
+
+.card {   
+   transition: all 0.5s ease-in;
+   transform: rotateY(160deg) translateX(-100%) translateY(-200%);
+   position: relative;
+   background-color: rgb(107, 107, 107);
+   background-image: linear-gradient(65deg, rgb(107, 107, 107), rgb(72, 90, 75));  
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   color: #fff;
+   padding: 20px;
+   border-radius: 2px;
+   border-top-right-radius: 30px;
+   border: none;
+
+   &__title {
+      @include fontStyle(500, 35, 1.5);  
+      margin-top: 20px; 
+      margin-bottom: 20px;   
+      text-align: center;
+   }
+
+   &__button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #000;      
+      border: none;
+      border-bottom-left-radius: 50%;
+      border-top-right-radius: 50%;
+      text-align: center;
+      color: #fff;
+      cursor: pointer;
+      padding: 15px;
+      margin: 0;
+      transition: all 0.3s ease-in;
+
+      &:hover {
+         background-color: #fff;
+         color: #000;
+      }
+   }
+
+   &__body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; 
+      width: 100%;
+   }
+
+   &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #1c1c1c;
+      border-radius: 5px;
+      padding: 5px;
+
+      & + .card__item {
+         margin-left: 5px; 
+      }
+   }
+
+   &__item-title {
+      @include fontStyle(400, 45, 1.5);
+   }
+}
+
+.fade-block.open .card {
+   transform: rotate(0) translateX(0) translateY(0);
+   opacity: 1;
+}
+
 
 
 @import "media";
