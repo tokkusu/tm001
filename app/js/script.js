@@ -43,11 +43,31 @@ $(function() {
    });
 });
 
-// if (document.body.classList.contains('lock')) {
-//    $.scrollify.disable();
-// } else {
-//    $.scrollify.enable();
-// };
+// Проверка на мобильный браузер
+const isMobile = {
+   Android: function () {
+       return navigator.userAgent.match(/Android/i);
+   },
+   BlackBerry: function () {
+       return navigator.userAgent.match(/BlackBerry/i);
+   },
+   iOS: function () {
+       return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+   },
+   Opera: function () {
+       return navigator.userAgent.match(/Opera Mini/i);
+   },
+   Windows: function () {
+       return navigator.userAgent.match(/IEMobile/i);
+   },
+   any: function () {
+       return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+   }
+};
+
+const fixedElPadding = document.querySelectorAll('fixed-element');  
+      
+addPadding = window.innerWidth - document.body.offsetWidth + 'px'; 
 
 // Меню бургер
 const button  = document.querySelector('.menu__btn');
@@ -56,27 +76,68 @@ const logo    = document.querySelector('.logo__img');
 const links   = document.querySelectorAll('.menu__list-link');
 
 button.addEventListener('click', function () {
+
    button.classList.toggle('menu__btn--active');
    menu.classList.toggle('menu__list--active');
-   document.body.classList.toggle('lock');
+   document.body.classList.toggle('lock'); 
+
+   if (!document.body.classList.contains('lock')) {
+      
+      // Компенсация скролла
+         if (fixedElPadding.length > 0) {
+         fixedElPadding.forEach(function (i) {
+            i.style.paddingRight = '0px';         
+         });
+      };
+      
+      document.body.style.paddingRight = '0px';   
+
+   } else {
+      fixedElPadding.forEach(function (i) {
+         i.style.paddingRight = addPadding;
+      });
+
+      document.body.style.paddingRight = addPadding; 
+   };       
+   
    if (document.body.classList.contains('lock')) {
       $.scrollify.disable();
    } else {
       $.scrollify.enable(); 
-   };
+   };     
 });
 
 logo.addEventListener('click', function () {   
+
+   // Компенсация скролла
+   if (fixedElPadding.length > 0) {
+      fixedElPadding.forEach(function (i) {
+         i.style.paddingRight = '0px';
+      }); 
+   }; 
+
+   document.body.style.paddingRight = '0px';   
+
    button.classList.remove('menu__btn--active');
    menu.classList.remove('menu__list--active');
    document.body.classList.remove('lock');
-   });
+});
 
 links.forEach(function (link) {
    link.addEventListener('click', function () {
-   button.classList.remove('menu__btn--active');
-   menu.classList.remove('menu__list--active');
-   document.body.classList.remove('lock');
+           
+      button.classList.remove('menu__btn--active');
+      menu.classList.remove('menu__list--active');
+      document.body.classList.remove('lock');
+
+      // Компенсация скролла
+      if (fixedElPadding.length > 0) {
+         fixedElPadding.forEach(function (i) {
+            i.style.paddingRight = '0px';
+         }); 
+      };
+
+      document.body.style.paddingRight = '0px';      
    });
 });
 
@@ -89,9 +150,17 @@ const headerButton     = document.querySelectorAll('[data-modal-button]'),
 headerButton.forEach(function (i) {
    i.addEventListener('click', function () {
       const modalId = this.dataset.modalButton;
-      const modal   = document.querySelector('#' + modalId);      
+      const modal   = document.querySelector('#' + modalId);  
+           
+      // Компенсация скролла
+      if (!isMobile && !document.body.classList.contains('lock')) {
+         if (fixedElPadding.length > 0) {
+            fixedElPadding.forEach(function (i) {
+               i.style.paddingRight = addPadding;
+            });
+            document.body.style.paddingRight = addPadding;
+         };            
 
-      if (!document.body.classList.contains('lock')) {
          document.body.classList.add('lock');
          $.scrollify.disable();
       };
@@ -109,8 +178,16 @@ headerButton.forEach(function (i) {
 modalButtonClose.forEach(function (item) {
    item.addEventListener('click', function () {
       const modal = this.closest('[data-modal]');         
-
-      if (!menu.classList.contains('menu__list--active')) {
+      
+      // Компенсация скролла
+      if (!isMobile && !menu.classList.contains('menu__list--active')) {
+         if (fixedElPadding.length > 0) {
+            fixedElPadding.forEach(function (i) {
+               i.style.paddingRight = '0px';
+            });
+            document.body.style.paddingRight = '0px';
+         };   
+         
          modal.classList.remove('open');
          document.body.classList.remove('lock');
          $.scrollify.enable();         
@@ -124,7 +201,15 @@ modalButtonClose.forEach(function (item) {
 allModal.forEach(function (item) {
    item.addEventListener('click', function () {      
 
-      if (!menu.classList.contains('menu__list--active')) {
+      // Компенсация скролла
+      if (!isMobile && !menu.classList.contains('menu__list--active')) {
+         if (fixedElPadding.length > 0) {
+            fixedElPadding.forEach(function (i) {
+               i.style.paddingRight = '0px';
+            });
+            document.body.style.paddingRight = '0px';
+         };   
+         
          this.classList.remove('open');
          document.body.classList.remove('lock');
          $.scrollify.enable();

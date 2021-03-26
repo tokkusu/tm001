@@ -6,6 +6,7 @@ const { src, dest, parallel, series, watch } = require('gulp'),
       browsersync  = require('browser-sync').create(),
       uglify       = require('gulp-uglify-es').default,
       autoprefixer = require('gulp-autoprefixer'),
+      fileInclude  = require('gulp-file-include'),
       imagemin     = require('gulp-imagemin'),
       svgSprite    = require('gulp-svg-sprite'),
       cheerio      = require('gulp-cheerio'),
@@ -34,7 +35,7 @@ let path = {
       fonts: projectFolder + "/fonts/"
    },
    src: {
-      html: sourceFolder + "/index.html",
+      html: [sourceFolder + "/*.html", "!" + sourceFolder + "/_*.html"],
       css: sourceFolder + "/scss/style.scss",
       js: sourceFolder + "/js/script.js",      
       img: sourceFolder + "/images/*.*",
@@ -63,6 +64,7 @@ function browserSync() {
 
 function html() {
    return src(path.src.html)
+      .pipe(fileInclude())
       .pipe(dest(path.build.html))
       .pipe(browsersync.stream())
 }
@@ -125,7 +127,7 @@ function optimizeSvg() {
             stack: {        
                dest: "/dist/images/",       
                sprite: "svgicons.svg",
-               example: true
+               example: false
             }
          }
    }))  
@@ -135,8 +137,7 @@ function optimizeSvg() {
          $('[stroke]').removeAttr('stroke');
          $('[style]').removeAttr('style');
          $('[fill-opacity]').removeAttr('fill-opacity');
-         $('[opacity]').removeAttr('opacity');
-         
+         $('[opacity]').removeAttr('opacity');         
       },
       parserOptions: {xmlMode: true}
    }))

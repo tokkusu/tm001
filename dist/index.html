@@ -11,38 +11,39 @@
 </head>
 
 <body>
-   <header class="header">
-      <div class="container">
-         <div class="header__inner">
-            <a class="logo" href="#">
-               <picture class="logo__img">
-                  <source srcset="images/logo-mobile.png" media="(max-width: 600px)">
-                  <img src="images/logo.png" alt="Логотип сайта">
-               </picture>
-            </a>
-            <nav class="menu">
-               <button class="menu__btn" type="button">
-                  <span class="menu__btn-line"></span>
-               </button>
-               <ul class="menu__list">
-                  <li class="menu__list-item"><a class="menu__list-link" href="#products">О дроне</a></li>
-                  <li class="menu__list-item"><a class="menu__list-link" href="#benefits">Преимущества</a></li>
-                  <li class="menu__list-item"><a class="menu__list-link" href="#specifications">Характеристики</a></li>
-                  <li class="menu__list-item"><a class="menu__list-link" href="#questions">Вопросы</a></li>
-                  <li class="menu__list-item"><a class="menu__list-link" href="#contacts">Контакты</a></li>
-                  <li class="menu__list-item">
-                     <a href="tel:80505676767" class="menu__list-phone">8 (050) 567 67 67</a>
-                  </li>
-               </ul>
-            </nav>
+   
+   <header class="header fixed-element">
+   <div class="container">
+      <div class="header__inner">
+         <a class="logo" href="#">
+            <picture class="logo__img">
+               <source srcset="images/logo-mobile.png" media="(max-width: 600px)">
+               <img src="images/logo.png" alt="Логотип сайта">
+            </picture>
+         </a>
+         <nav class="menu">
+            <button class="menu__btn" type="button">
+               <span class="menu__btn-line"></span>
+            </button>
+            <ul class="menu__list">
+               <li class="menu__list-item"><a class="menu__list-link" href="#products">О дроне</a></li>
+               <li class="menu__list-item"><a class="menu__list-link" href="#benefits">Преимущества</a></li>
+               <li class="menu__list-item"><a class="menu__list-link" href="#specifications">Характеристики</a></li>
+               <li class="menu__list-item"><a class="menu__list-link" href="#questions">Вопросы</a></li>
+               <li class="menu__list-item"><a class="menu__list-link" href="#contacts">Контакты</a></li>
+               <li class="menu__list-item">
+                  <a href="tel:80505676767" class="menu__list-phone">8 (050) 567 67 67</a>
+               </li>
+            </ul>
+         </nav>
 
-            <div class="header__info">
-               <button class="header__button" type="button" data-modal-button="modal-1">Купить</button>               
-               <a href="tel:80505676767" class="header__phone">8 (050) 567 67 67</a>
-            </div>
+         <div class="header__info">
+            <button class="header__button" type="button" data-modal-button="modal-1">Купить</button>               
+            <a href="tel:80505676767" class="header__phone">8 (050) 567 67 67</a>
          </div>
       </div>
-   </header>
+   </div>
+</header> 
 
    <section class="page-section top">
       <div class="container">
@@ -464,40 +465,40 @@
    </section>    
 
    <footer class="footer"> 
-      <div class="container">      
-         <p class="footer__copyright">
-            © DJI, 2020
-         </p>   
-      </div>            
-   </footer> 
-   
+   <div class="container">      
+      <p class="footer__copyright">
+         © DJI, 2020
+      </p>   
+   </div>            
+</footer>    
+
    <div class="fade-block" data-modal id="modal-1">
-      <div class="modal">
-         <div class="card">
-            <h3 class="card__title">До старта продаж осталось:</h3>
-            <button class="card__button" data-modal-close type="button">x</button>
-            <div class="card__body">
-               <div class="card__item">
-                  <h4 class="card__item-title" id="days">00</h4>
-                  <p class="card__item-text">Дней</p>
-               </div>
-               <div class="card__item">
-                  <h4 class="card__item-title" id="hours">00</h4>
-                  <p class="card__item-text">Часов</p>
-               </div>
-               <div class="card__item">
-                  <h4 class="card__item-title" id="minutes">00</h4>
-                  <p class="card__item-text">Минут</p>
-               </div>
-               <div class="card__item">
-                  <h4 class="card__item-title" id="seconds">00</h4>
-                  <p class="card__item-text">Секунд</p>
-               </div>                           
-               
-            </div>                        
-         </div>
+   <div class="modal">
+      <div class="card">
+         <h3 class="card__title">До старта продаж осталось:</h3>
+         <button class="card__button" data-modal-close type="button">x</button>
+         <div class="card__body">
+            <div class="card__item">
+               <h4 class="card__item-title" id="days">00</h4>
+               <p class="card__item-text">Дней</p>
+            </div>
+            <div class="card__item">
+               <h4 class="card__item-title" id="hours">00</h4>
+               <p class="card__item-text">Часов</p>
+            </div>
+            <div class="card__item">
+               <h4 class="card__item-title" id="minutes">00</h4>
+               <p class="card__item-text">Минут</p>
+            </div>
+            <div class="card__item">
+               <h4 class="card__item-title" id="seconds">00</h4>
+               <p class="card__item-text">Секунд</p>
+            </div>                           
+            
+         </div>                        
       </div>
    </div>
+</div>
 
    <script src="js/vendors.min.js"></script>
    <script src="js/script.min.js"></script>
