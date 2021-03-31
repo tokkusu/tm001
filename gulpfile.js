@@ -57,7 +57,8 @@ let path = {
 function browserSync() {
    browsersync.init({
       server: {
-         baseDir: "./" + projectFolder + "/"
+         baseDir: "./" + projectFolder + "/",
+         notify: false
       }      
    });
 }

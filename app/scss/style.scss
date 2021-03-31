@@ -735,10 +735,7 @@
    position: relative;
    background-color: rgb(107, 107, 107);
    background-image: linear-gradient(65deg, rgb(107, 107, 107), rgb(72, 90, 75));  
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+   width: 500px;
    color: #fff;
    padding: 20px;
    border-radius: 2px;
@@ -788,6 +785,7 @@
       background-color: #1c1c1c;
       border-radius: 5px;
       padding: 5px;
+      min-width: 100px;
 
       & + .card__item {
          margin-left: 5px; 

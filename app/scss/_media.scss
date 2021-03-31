@@ -257,11 +257,10 @@
       padding: 15px 0;
    }
 
-   .header__button {      
-      right: 60px;
+   .header__info {
+      position: fixed;
+      right: 70px;
       top: 20px;
-      margin-right: 0;
-      position: absolute;
    }
 
    .logo {
@@ -830,6 +829,26 @@
       right: 15px;
       bottom: 15px;
    }   
+
+   .card {
+      min-width: 310px;
+      width: unset;
+   }
+
+   .card__body {
+      
+      justify-content: center;
+   }
+
+   .card__item {
+      padding: 1px;
+      min-width: 25%;
+      margin: 0;
+   }
+
+   .card__item + .card__item {
+      margin-left: 5px; 
+   }
 }
 
 @media (max-width: 420px) { 
@@ -859,7 +878,7 @@
       width: 100%;
       flex-direction: row;
       justify-content: space-around;
-   }   
+   }      
 }
 
 @media (max-height: 620px) {
@@ -883,6 +902,10 @@
 }
 
 @media (max-height: 420px) {
+
+   .menu__list-item:first-child {
+      padding-top: 50px;
+   }
 
    .menu__list-item {
       margin-bottom: 5px;
