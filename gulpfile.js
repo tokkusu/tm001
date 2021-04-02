@@ -74,7 +74,10 @@ function css() {
    return src(path.src.css)
       .pipe(scss({ outputStyle: 'compressed' }))
       .pipe(concat('style.min.css'))
-      .pipe(autoprefixer({ overrideBrowserslist: ["last 20 versions"] }))
+      .pipe(autoprefixer({ 
+         overrideBrowserslist: ["last 20 versions"],
+         grid: true
+      }))
       .pipe(dest(path.build.css))
       .pipe(browsersync.stream())
 }
